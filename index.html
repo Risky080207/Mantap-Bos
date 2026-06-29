@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITAS XIII-2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(128, 0, 128, 0.75);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Logo Section - Premium */
+        .logo-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            padding: 10px;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF6347, #FF1493, #9400D3, #4169E1, #FFD700);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 
+                        inset 0 0 30px rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+
+        .logo-box::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #00CED1, #FFD700);
+            background-size: 300% 300%;
+            border-radius: 50%;
+            z-index: -1;
+            animation: gradientShift 6s ease infinite;
+            opacity: 0.7;
+            filter: blur(10px);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.9);
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header - Premium Horizontal */
+        .header {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 248, 255, 0.95));
+            border-radius: 25px;
+            padding: 30px 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shine 8s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            font-size: 2.3em;
+            background: linear-gradient(135deg, #800080, #FF1493, #4169E1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            white-space: nowrap;
+            animation: shimmer 5s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        .header h2 {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .header h3 {
+            font-size: 1.4em;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            white-space: nowrap;
+            margin-top: 10px;
+        }
+
+        .separator {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Location Box - Premium */
+        .location-box {
+            background: linear-gradient(135deg, #FF6B6B 0%, #EE5A6F 50%, #FF8E53 100%);
+            color: white;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(238, 90, 111, 0.4),
+                        0 0 0 3px rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .location-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .location-box:hover::before {
+            transform: scale(1);
+        }
+
+        .location-box:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(238, 90, 111, 0.5),
+                        0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .location-box i {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            display: block;
+            animation: bounce 2s infinite;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .location-box .main-text {
+            font-size: 1.3em;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .location-box .sub-text {
+            font-size: 0.95em;
+            opacity: 0.95;
+            display: block;
+        }
+
+        /* Main CTA - Premium */
+        .main-cta {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.95));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .main-cta p {
+            font-size: 1.3em;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            animation: shimmer 5s linear infinite;
+        }
+
+        /* Main Buttons - Premium Horizontal */
+        .main-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .main-btn {
+            flex: 1;
+            min-width: 220px;
+            max-width: 320px;
+            color: white;
+            padding: 28px 22px;
+            border-radius: 18px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-size: 1em;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .main-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .main-btn:hover::before {
+            left: 100%;
+        }
+
+        .main-btn:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .main-btn i {
+            font-size: 2em;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-btn span {
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button 1 - Royal Purple */
+        .main-btn:nth-child(1) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Button 2 - Rose Gold */
+        .main-btn:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ff6b6b 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+            animation-delay: 1s;
+        }
+
+        /* Button 3 - Golden Sunset */
+        .main-btn:nth-child(3) {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6347 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+            animation-delay: 2s;
+            color: #2d3436;
+        }
+
+        /* Button 4 - Ocean Blue */
+        .main-btn:nth-child(4) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+            animation-delay: 3s;
+        }
+
+        /* Poster Section - Premium */
+        .poster-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.95));
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poster-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .poster-section h3 {
+            font-size: 1.7em;
+            background: linear-gradient(135deg, #800080, #FF1493, #FFD700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .poster-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 50%, #30cfd0 100%);
+            background-size: 200% 200%;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05em;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(250, 112, 154, 0.4);
+            position: relative;
+            z-index: 1;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: gradientFlow 6s ease infinite;
+        }
+
+        .poster-btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 20px 40px rgba(250, 112, 154, 0.5);
+        }
+
+        .poster-btn i {
+            font-size: 1.5em;
+        }
+
+        /* Competitions - Premium */
+        .competitions {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.95));
+            padding: 30px 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .competitions h3 {
+            font-size: 1.7em;
+            background: linear-gradient(135deg, #800080, #4169E1, #00CED1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .competition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .competition-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8ff 100%);
+            padding: 22px 15px;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .competition-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(128, 0, 128, 0.1), rgba(65, 105, 225, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .competition-item:hover::before {
+            opacity: 1;
+        }
+
+        .competition-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: #800080;
+        }
+
+        .competition-item i {
+            font-size: 2em;
+            background: linear-gradient(135deg, #800080, #FF1493, #4169E1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            display: block;
+            animation: shimmer 5s linear infinite;
+        }
+
+        .competition-item span {
+            display: block;
+            font-size: 0.9em;
+            color: #333;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Social Media - Premium */
+        .social-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.95));
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .social-section h3 {
+            font-size: 1.7em;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #FFE66D);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-size: 0.95em;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .social-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-btn i {
+            font-size: 1.5em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+        }
+
+        .tiktok {
+            background: linear-gradient(135deg, #000000 0%, #25f4ee 50%, #fe2c55 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+            animation-delay: 1s;
+        }
+
+        .youtube {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 50%, #ff0000 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+            animation-delay: 2s;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: white;
+            font-size: 0.95em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.9em;
+            }
+
+            .header h2 {
+                font-size: 1em;
+            }
+
+            .header h3 {
+                font-size: 1.15em;
+            }
+
+            .main-btn {
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            .competition-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-btn {
+                width: 220px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .logo-box {
+                width: 160px;
+                height: 160px;
+            }
+
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .header h2 {
+                font-size: 0.9em;
+            }
+
+            .header h3 {
+                font-size: 1.05em;
+            }
+
+            .competition-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 12px;
+            }
+
+            .competition-item {
+                padding: 18px 12px;
+            }
+
+            .competition-item i {
+                font-size: 1.7em;
+            }
+
+            .competition-item span {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-wrapper">
+            <div class="logo-box">
+                <img src="logo.png" alt="Logo Pekan Arabi" class="logo">
+            </div>
+        </div>
+
+        <!-- Header - Horizontal Layout -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-line">
+                    <h1>Pekan Arabi 2026</h1>
+                    <span class="separator">|</span>
+                    <h2>(My Little Bolu Ketan)</h2>
+                </div>
+            </div>
+            <div class="header-line" style="margin-top: 10px;">
+                <h3>"My Little Bolu Ketan"</h3>
+            </div>
+        </div>
+
+        <!-- Location -->
+        <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="location-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="main-text">Ayo kunjungi sekolah kami sekarang juga!!!</span>
+            <span class="sub-text">Klik kotak ini untuk melihat lokasi Universitas kami!!</span>
+        </a>
+
+        <!-- Main CTA -->
+        <div class="main-cta">
+            <p>Mari berpartisipasi dalam acara Pekan Arabi UM 2026</p>
+        </div>
+
+        <!-- Main Buttons - Horizontal -->
+        <div class="main-buttons">
+            <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="main-btn">
+                <i class="fas fa-file-alt"></i>
+                <span>Petunjuk Teknis (Juknis)</span>
+            </a>
+            <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="main-btn">
+                <i class="fas fa-camera"></i>
+                <span>DOKUMENTASI Pekan Arabi</span>
+            </a>
+            <a href="#" class="main-btn">
+                <i class="fas fa-trophy"></i>
+                <span>SK JUARA</span>
+            </a>
+            <a href="#" class="main-btn">
+                <i class="fas fa-edit"></i>
+                <span>Formulir Pendaftaran</span>
+            </a>
+        </div>
+
+        <!-- Poster Section -->
+        <div class="poster-section">
+            <h3>Design Poster</h3>
+            <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="poster-btn">
+                <i class="fas fa-palette"></i>
+                <span>Lihat Foto</span>
+            </a>
+        </div>
+
+        <!-- Competitions -->
+        <div class="competitions">
+            <h3>Kategori Lomba</h3>
+            <div class="competition-grid">
+                <div class="competition-item">
+                    <i class="fas fa-camera"></i>
+                    <span>Fotografi</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-microphone"></i>
+                    <span>Pidato bahasa indonesia</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span>Kaligrafi Naskhi</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Cerdas Cermat</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Olimpiade MIPA</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-table-tennis"></i>
+                    <span>Tenis Meja</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-quran"></i>
+                    <span>MTQ/Tilawah</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-futbol"></i>
+                    <span>Sepak Bola</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-book"></i>
+                    <span>Hifdzul Qur'an</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-users"></i>
+                    <span>Syarhil Qur'an</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-drum"></i>
+                    <span>Rapaie Geleng</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-gavel"></i>
+                    <span>Fahmil Qur'an</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-music"></i>
+                    <span>Nasyid Acapella</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-comment"></i>
+                    <span>Pidato Bahasa Aceh</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-language"></i>
+                    <span>Olimpiade Bahasa Jepang</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>Mewarnai</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-section">
+            <h3>FOLLOW US!!!</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>INSTAGRAM</span>
+                </a>
+                <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TIK TOK</span>
+                </a>
+                <a href="https://www.instagram.com/pekanarabium?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YOUTUBE</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; Pekan Arabi UM. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
