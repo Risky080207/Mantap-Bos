@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 0, 128, 0.7);
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.main-title {
+    font-size: 2.5em;
+    color: #800080;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.tagline {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Location Button */
+.location-section {
+    margin-bottom: 30px;
+}
+
+.location-btn {
+    display: block;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    color: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.location-btn i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.location-btn span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.location-btn small {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Main CTA */
+.main-cta {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-cta p {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Main Buttons Grid */
+.main-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    min-height: 120px;
+}
+
+.main-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.main-btn i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.main-btn span {
+    font-size: 1em;
+    text-align: center;
+}
+
+.btn-1 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.btn-2 {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.btn-3 {
+    background: linear-gradient(135deg, #ffd89b, #d4a373);
+    color: #333;
+}
+
+.btn-4 {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Poster Section */
+.poster-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #800080;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.poster-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.poster-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.poster-btn i {
+    font-size: 1.5em;
+}
+
+/* Competitions Section */
+.competitions-section {
+    margin-bottom: 30px;
+}
+
+.competition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.competition-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.competition-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 1);
+}
+
+.competition-item i {
+    font-size: 2em;
+    color: #800080;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.competition-item span {
+    display: block;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Social Media Section */
+.social-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn i {
+    font-size: 1.5em;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.tiktok {
+    background: linear-gradient(135deg, #000000, #25f4ee, #fe2c55);
+}
+
+.youtube {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    .main-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .competition-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-btn {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .main-title {
+        font-size: 1.7em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .tagline {
+        font-size: 1.1em;
+    }
+
+    .location-btn span {
+        font-size: 1em;
+    }
+
+    .competition-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 10px;
+    }
+
+    .competition-item {
+        padding: 15px 10px;
+    }
+
+    .competition-item i {
+        font-size: 1.5em;
+    }
+
+    .competition-item span {
+        font-size: 0.85em;
+    }
+}
